@@ -40,7 +40,7 @@ Manages shipping details for orders.
 ## Setup Instructions
 1. **Clone the repository:**
    ```sh
-   git clone 
+   git clone https://github.com/Awader28/Bazarify-Microservice-Project.git
 ## Navigate to the project directory:
 cd bazarify
 ## Update application properties:
