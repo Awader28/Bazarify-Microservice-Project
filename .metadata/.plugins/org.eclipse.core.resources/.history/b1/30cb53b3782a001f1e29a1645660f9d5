@@ -1,0 +1,5 @@
+package com.bazarify.fiegn;
+
+public class ShippingClient {
+
+}

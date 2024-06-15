@@ -1,0 +1,39 @@
+package com.bazarify.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+import com.bazarify.client.ShippingClient;
+import com.bazarify.model.Shipping;
+import com.bazarify.repository.CustomerRepository;
+import com.bazarify.model.Customer;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    private CustomerRepository customerRepository;
+    
+    @Autowired
+    private ShippingClient shippingClient;
+
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    public Optional<Customer> getCustomerById(Long id) {
+        return customerRepository.findById(id);
+    }
+
+    public Customer saveCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    public void deleteCustomer(Customer customer) {
+        customerRepository.delete(customer);
+    }
+
+    public List<Shipping> getShippingByOrderId(Long orderId) {
+        return shippingClient.getShippingByOrderId(orderId);
+    }
+}

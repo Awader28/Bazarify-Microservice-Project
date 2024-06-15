@@ -1,0 +1,37 @@
+package com.example.shippingservice.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bazarify.model.Shipping;
+import com.bazarify.service.ShippingService;
+
+@RestController
+@RequestMapping("/shippings")
+public class ShippingController {
+    @Autowired
+    private ShippingService shippingService;
+
+    @GetMapping("/{orderId}")
+    public List<Shipping> getShippingByOrderId(@PathVariable Long orderId) {
+        return shippingService.getShippingByOrderId(orderId);
+    }
+
+    @PostMapping
+    public Shipping createShipping(@RequestBody Shipping shipping) {
+        return shippingService.createShipping(shipping);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteShipping(@PathVariable Long id) {
+        shippingService.deleteShipping(id);
+    }
+}

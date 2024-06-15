@@ -1,0 +1,19 @@
+package com.bazarify.service;
+
+import com.bazarify.client.ShippingClient;
+import com.bazarify.dto.ShippingDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    private ShippingClient shippingClient;
+
+    public List<ShippingDTO> getShippingByOrderId(Long orderId) {
+        return shippingClient.getShippingByOrderId(orderId);
+    }
+}

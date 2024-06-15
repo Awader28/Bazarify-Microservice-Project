@@ -1,0 +1,15 @@
+package com.bazarify.fiegn;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.bazarify.model.Shipping;
+
+@FeignClient(name = "shipping-service", url = "http://localhost:8081")
+public interface ShippingClient {
+    @GetMapping("/shippings/order/{orderId}")
+    List<Shipping> getShippingByOrderId(@PathVariable("orderId") Long orderId);
+}

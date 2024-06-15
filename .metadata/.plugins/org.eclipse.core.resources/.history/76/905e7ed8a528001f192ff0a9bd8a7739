@@ -1,0 +1,5 @@
+package com.bazarify.model;
+
+public class Shipping {
+
+}

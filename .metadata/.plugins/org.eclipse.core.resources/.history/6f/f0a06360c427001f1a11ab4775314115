@@ -1,0 +1,21 @@
+package com.example.demo.model;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+public class Orders {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long orderId;
+
+    private Double purchaseAmount;
+    private Date orderDate;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    // Getters and setters
+}

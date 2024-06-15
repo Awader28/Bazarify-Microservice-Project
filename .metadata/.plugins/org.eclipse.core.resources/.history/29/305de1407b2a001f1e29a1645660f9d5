@@ -1,0 +1,5 @@
+package com.bazarify.client;
+
+public class ShippingClient {
+
+}

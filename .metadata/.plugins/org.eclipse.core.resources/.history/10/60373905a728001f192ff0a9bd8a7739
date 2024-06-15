@@ -1,0 +1,5 @@
+package com.bazarify.repository;
+
+public interface ShippingRepository implements JpaRepository {
+
+}

@@ -1,0 +1,12 @@
+package com.bazarify.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+import com.bazarify.model.Shipping;
+
+public interface ShippingRepository implements JpaRepository {
+	List<Shipping> findbyOrderID(long order_id);
+}

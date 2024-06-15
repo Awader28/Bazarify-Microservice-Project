@@ -1,0 +1,5 @@
+package com.bazarify.service;
+
+public class OrderService {
+
+}

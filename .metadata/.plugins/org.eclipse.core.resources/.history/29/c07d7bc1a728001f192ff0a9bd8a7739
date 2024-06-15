@@ -1,0 +1,15 @@
+package com.bazarify.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bazarify.repository.ShippingRepository;
+
+@Service
+public class ShippingService {
+	
+	@Autowired	
+	private ShippingRepository repo;
+	
+
+}
